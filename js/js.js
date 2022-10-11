@@ -10,7 +10,7 @@ const fData = await response.json();
 form.onsubmit = (e) => {
 e.preventDefault();
 if (inputMessage.value === "") {
-    alert("اكتب حاجه يا ميتين")
+    alert("inter any thing ")
 }
 else{
 
@@ -18,16 +18,23 @@ else{
          dilog.questions.forEach(quees => {
              if(inputMessage.value ===quees){
                 let question = quees;
-               chatArea.innerHTML+= '<article class="msg-container msg-self" id="msg-0"><div class="msg-box"><div class="flr"><div class="messages"><p class="msg" id="msg-1"></p></div><span class="timestamp"><span class="username">Name</span>&bull;<span class="posttime">Now</span></span></div><img class="user-img" id="user-0" src="//gravatar.com/avatar/56234674574535734573000000000001?d=retro" /></div></article>';
-                document.querySelector("#msg-1").innerHTML+= question;
+                let answer=( dilog.answers[Math.floor(Math.random()* dilog.answers.length)]);
+                var massegTime =Math.floor(Math.random()*10000);
+                let d = new Date();
+                let h=d.getHours();
+                let m=d.getMinutes();
+                var usermasseg =' <article class="msg-container msg-self" ><div class="msg-box"><div class="flr"><div class="messages"><p class="msg" >'+question+ '</p></div><span class="timestamp"><span class="posttime">'+h+':'+m+'</span></span> </div><img class="user-img" id="user-0" src="imges/profile.jpg" /></div></article>';
+               var botMasseg= '<article class="msg-container msg-remote"><div class="msg-box"><img class="user-img"  src="imges/icon.jpg" /><div class="flr"><div class="messages"><p class="msg" >'+ answer +'</p></div><span class="timestamp"> <span class="posttime">'+h+':'+(m+1)+'</span></span> </div></div></article>';
+               chatArea.innerHTML+=usermasseg;
 
-
-                   ( dilog.answers[Math.floor(Math.random()* dilog.answers.length)]);
-                                            }
+            
+               setTimeout(()=>{ chatArea.innerHTML+= botMasseg;},massegTime);
+            }
                         });
 
 });
-        
+  inputMessage.value =""
+   
 
 }
 

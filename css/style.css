@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: #1c1e22;
+    background-image: "imges/backgraond.jpg";
 }
 body {
 	display: flex;
@@ -17,32 +17,34 @@ body {
 	width: 4px;
 }
 ::-webkit-scrollbar-thumb {
-	background-color: #4c4c6a;
+	
 	border-radius: 2px;
 }
 #headerbar{
+    display: flex;
 width: 100%;
-height:60px;
-background-color: midnightblue;
-
-
+height:50px;
+background-color: rgba(9, 6, 43, 0.794);
 }
-#headerbar h1{
-    text-align: center;
+#headerbar div{
+     width: 40%;
+    display:inherit;
 }
 .chatbox {
     width: 600px;
     height: 1000px;
- 
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+    background-image: url("imges/backgraond.jpg");
+
 }
 .chat-window {
     flex: auto;
     max-height: calc(100% - 60px);
-    background: #2f323b;
+    
     overflow: auto;
 }
 .chat-input {
@@ -92,10 +94,13 @@ background-color: midnightblue;
     width: 100%;
     margin: 0 0 10px 0;
     padding: 0;
+    
+
 }
 .msg-box {
-    display: flex;
     background: #5b5e6c;
+margin: 5px;
+    display: flex;
     padding: 10px 10px 0 10px;
     border-radius: 0 6px 6px 0;
     max-width: 80%;
@@ -125,7 +130,7 @@ background-color: midnightblue;
     font-size: 11pt;
     line-height: 13pt;
     color: rgba(255,255,255,.7);
-    margin: 0 0 4px 0;
+    margin: 4px;
 }
 .msg:first-of-type {
     margin-top: 8px;
@@ -133,13 +138,16 @@ background-color: midnightblue;
 .timestamp {
     color: rgba(0,0,0,.38);
     font-size: 8pt;
-    margin-bottom: 10px;
+    display: inline;
 }
 .username {
     margin-right: 3px;
+    top: 0px;
+    position: relative;
 }
 .posttime {
-    margin-left: 3px;
+  
+    position: relative;
 }
 .msg-self .msg-box {
     border-radius: 6px 0 0 6px;
